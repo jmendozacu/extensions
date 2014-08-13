@@ -13,4 +13,6 @@
 			<action method="addItem"><type>skin_js</type><script>js/scripts.js</script></action>
 		</reference>
 	</cms_page>
+	
+ 
 </layout>
