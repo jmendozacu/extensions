@@ -1,0 +1,16 @@
+<?xml version="1.0"?> 
+<layout version="0.1.0">
+	<cms_page>
+		<reference name="head">			
+			<action method="addCss"><stylesheet>css/sh/shThemeDefault.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/sh/shCore.css</stylesheet></action>
+			<action method="addItem"><type>skin_js</type><script>js/sh/shCore.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>js/sh/shBrushCss.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>js/sh/shBrushJScript.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>js/sh/shBrushPhp.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>js/sh/shBrushXml.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>js/sh/shBrushPlain.js</script></action>
+			<action method="addItem"><type>skin_js</type><script>js/scripts.js</script></action>
+		</reference>
+	</cms_page>
+</layout>
