@@ -115,7 +115,8 @@
 
     Options +FollowSymLinks
     RewriteEngine on
-
+    RewriteCond %{HTTP_HOST} ^extensions.sashas.org$
+    RewriteRule (.*) http://www.extensions.sashas.org/$1 [R=301,L] 
 ############################################
 ## you can put here your magento root folder
 ## path relative to web root
@@ -208,5 +209,3 @@
 
     #FileETag none
 
-RewriteCond %{HTTP_HOST} !^www\.
-RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
