@@ -1,0 +1,6 @@
+var/
+media/
+includes/
+downloader/
+app/etc/local.xml
+.sass-cache/
