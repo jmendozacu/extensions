@@ -207,3 +207,6 @@
 ## http://developer.yahoo.com/performance/rules.html#etags
 
     #FileETag none
+
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
