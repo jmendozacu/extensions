@@ -813,8 +813,21 @@
 
 .block-related {
 
+	.block-content, .mini-products-list { min-height:2px; overflow:auto;}
+	
+	.block-content li.item { margin: 0 2.4% 10px 0px; width: 18%; }
+	.block-content li.item.last {margin-right:0px;}
+	
+	.block-content li.item img, .mini-products-list .product-image  {max-width:100%; }
+	 
+	@include bp(max-width, $bp-xsmall) {
+         display:none;
+    }	 
+	 
     li {
         margin-bottom: $element-spacing;
+        float:left;
+        clear:none;             
     }
 
     .block-title {
@@ -830,8 +843,7 @@
         margin-bottom: $element-spacing;
     }
 
-    .product {
-        margin-left: 20px;
+    .product {        
         position: relative;
     }
     .checkbox {
@@ -840,20 +852,21 @@
     }
 
     .product-details {
-        margin-left: 90px;
+        margin-left: 0px;
     }
 
     .product-name {
         margin-bottom: 3px;
+        text-align:center;
     }
 
     .product-details .price-box {
         margin: 2px 0 3px;
-
+		text-align:center;
+		
         a,
         p,
-        span {
-            float: left;
+        span {            
             margin-left: 3px;
 
             &:first-child {

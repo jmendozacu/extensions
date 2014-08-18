@@ -5486,8 +5486,24 @@ p.product-name a:hover {
  * Related Products
  */
 /* Block: Related */
+.block-related .block-content, .block-related .mini-products-list {
+  min-height: 2px;
+  overflow: auto;
+}
+.block-related .block-content li.item {
+  margin: 0 2.4% 10px 0px;
+  width: 18%;
+}
+.block-related .block-content li.item.last {
+  margin-right: 0px;
+}
+.block-related .block-content li.item img, .block-related .mini-products-list .product-image {
+  max-width: 100%;
+}
 .block-related li {
   margin-bottom: 7px;
+  float: left;
+  clear: none;
 }
 .block-related .block-title {
   border-bottom: none;
@@ -5509,7 +5525,6 @@ p.product-name a:hover {
   margin-bottom: 7px;
 }
 .block-related .product {
-  margin-left: 20px;
   position: relative;
 }
 .block-related .checkbox {
@@ -5517,18 +5532,19 @@ p.product-name a:hover {
   margin-top: 36px;
 }
 .block-related .product-details {
-  margin-left: 90px;
+  margin-left: 0px;
 }
 .block-related .product-name {
   margin-bottom: 3px;
+  text-align: center;
 }
 .block-related .product-details .price-box {
   margin: 2px 0 3px;
+  text-align: center;
 }
 .block-related .product-details .price-box a,
 .block-related .product-details .price-box p,
 .block-related .product-details .price-box span {
-  float: left;
   margin-left: 3px;
 }
 .block-related .product-details .price-box a:first-child,
