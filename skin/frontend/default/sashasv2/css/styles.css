@@ -4580,6 +4580,7 @@ a.skip-link {
 .footer .block-title {
   border-bottom: 0;
   padding: 3px 0;
+  border-top: 0px;
 }
 .footer .block-title strong {
   font-weight: normal;
