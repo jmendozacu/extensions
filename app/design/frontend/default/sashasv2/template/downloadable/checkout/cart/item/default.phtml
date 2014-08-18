@@ -77,17 +77,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <?php endforeach; ?>
         </dl>
     <?php endif; ?>
-    <!-- downloadable -->
-    <?php if ($links = $this->getLinks()): ?>
-        <dl class="item-options">
-            <dt><?php echo $this->getLinksTitle() ?></dt>
-            <?php foreach ($links as $link): ?>
-                <dd><?php echo $this->escapeHtml($link->getTitle()); ?></dd>
-            <?php endforeach; ?>
-        </dl>
-    <?php endif; ?>
-    <!-- EOF downloadable -->
-
+ 
     <?php if ($messages = $this->getMessages()): ?>
         <?php foreach ($messages as $message): ?>
             <div class="shopping-cart-item-message <?php echo $message['type'] ?>">
