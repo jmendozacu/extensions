@@ -59,5 +59,10 @@
     </ul>
 </div>
 <?php endif; ?>
-
+<script type="text/javascript">
+	jQuery("#image-main").bind("click", function(e) { 
+		var ez = jQuery('#image-main').data('elevateZoom');	
+		$.fancybox(ez.getGalleryList()); return false; 
+		});
+</script>
 <?php echo $this->getChildHtml('after'); ?>
