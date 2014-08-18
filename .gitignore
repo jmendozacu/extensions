@@ -38,3 +38,12 @@ RELEASE_NOTES*
 get.php
 
 pkginfo/
+app/design/frontend/rwd/
+app/code/core
+app/etc/config.xml
+app/design/install/
+skin/frontend/rwd/
+skin/install/
+skin/adminhtml/
+.htaccess.sample
+php.ini.sample
