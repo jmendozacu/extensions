@@ -51,17 +51,6 @@
         </dl>
     <?php endif; ?>
 
-    <!-- downloadable -->
-    <?php if ($links = $this->getLinks()): ?>
-        <dl class="item-options">
-            <dt><?php echo $this->getLinksTitle() ?></dt>
-            <?php foreach ($links->getPurchasedItems() as $link): ?>
-                <dd><?php echo $this->escapeHtml($link->getLinkTitle()); ?></dd>
-            <?php endforeach; ?>
-        </dl>
-    <?php endif; ?>
-    <!-- EOF downloadable -->
-
     <?php echo $this->escapeHtml($_item->getDescription()) ?>
     <?php if ($this->helper('giftmessage/message')->getIsMessagesAvailable('order_item', $_item) && $_item->getGiftMessageId()): ?>
         <br/><a href="#" id="order-item-gift-message-link-<?php echo $_item->getId() ?>"
