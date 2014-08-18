@@ -1,30 +1,5 @@
 <?php
 /**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     rwd_default
- * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
-
-/**
  * Product view template
  *
  * @see Mage_Catalog_Block_Product_View
@@ -77,17 +52,6 @@
                     </div>
                 <?php endif;?>
 
-
-
-
-                <?php echo $this->getChildHtml('other');?>
-
-                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                <?php endif;?>
-
-            </div>
-
             <div class="add-to-cart-wrapper">
                 <?php echo $this->getChildHtml('product_type_data') ?>
                 <?php echo $this->getChildHtml('extrahint') ?>
@@ -112,12 +76,18 @@
                 <?php endif; ?>
             </div>
 
-            <?php echo $this->getChildHtml('related_products') ?>
 
+                <?php echo $this->getChildHtml('other');?>
+
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                <?php endif;?>
+	            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+	                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+	            <?php endif;?>
+            </div>
             <div class="clearer"></div>
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-            <?php endif;?>
+ 
         </form>
         <script type="text/javascript">
         //<![CDATA[
@@ -171,7 +141,7 @@
         //]]>
         </script>
     </div>
-
+ 	<?php echo $this->getChildHtml('related_products') ?>
     <div class="product-collateral toggle-content tabs">
         <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
             <dl id="collateral-tabs" class="collateral-tabs">
