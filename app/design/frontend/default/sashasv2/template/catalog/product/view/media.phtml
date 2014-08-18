@@ -42,7 +42,7 @@
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
     <h2><?php echo $this->__('More Views') ?></h2>
-    <ul class="product-image-thumbs">
+    <ul class="product-image-thumbs" id="addtional_images">
     <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
         <?php
         if (($filterClass = $this->getGalleryFilterHelper()) && ($filterMethod = $this->getGalleryFilterMethod()) && !Mage::helper($filterClass)->$filterMethod($_product, $_image)):
@@ -59,10 +59,5 @@
     </ul>
 </div>
 <?php endif; ?>
-<script type="text/javascript">
-	jQuery("#image-main").bind("click", function(e) { 
-		var ez = jQuery('#image-main').data('elevateZoom');	
-		$.fancybox(ez.getGalleryList()); return false; 
-		});
-</script>
+ 
 <?php echo $this->getChildHtml('after'); ?>
