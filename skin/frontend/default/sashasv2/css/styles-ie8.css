@@ -4944,11 +4944,13 @@ p.product-name a:hover {
 .product-view .old-price .price-label {
   display: none;
 }
-.product-view .add-to-cart-wrapper,
-.product-view .block-related {
+.product-view .add-to-cart-wrapper {
   width: 50%;
   float: right;
   clear: right;
+}
+.product-view .block-related {
+  width: 100%;
 }
 
 .product-img-box {
