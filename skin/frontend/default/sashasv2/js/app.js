@@ -637,21 +637,23 @@ var ProductMediaManager = {
 
             if(widthDiff < 0 && heightDiff < 0) {
                 //image not big enough
-
+ 
                 image.parents('.product-image').removeClass('zoom-available');
 
                 //return;
-            } else {
+            } else {             
                 image.parents('.product-image').addClass('zoom-available');
             }
         }
         
         /*Sashas*/ 
-        image.elevateZoom({gallery:'gallery', galleryActiveClass: 'zoomGalleryActive', zoomType : "inner", cursor: "crosshair"});        
+        image.elevateZoom({gallery:'gallery', galleryActiveClass: 'zoomGalleryActive', zoomType : "inner", cursor: "crosshair"});  
+        
         jQuery(image).bind("click", function(e) { 
-    		var ez = jQuery(image).data('elevateZoom');	    		 
-    		jQuery.fancybox(ez.getGalleryList()); return false; 
-    		});  
+    		var ez = jQuery(image).data('elevateZoom');	      		 
+    		jQuery.fancybox(ez.getGalleryList()); 
+    		return false; 
+    	});  
         /*Sashas*/        
     },
 
