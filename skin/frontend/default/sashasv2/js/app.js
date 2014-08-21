@@ -215,7 +215,7 @@ $j(document).ready(function () {
             event.preventDefault();
         }
     }).on('touchstart', function(event) {  
-        $j(this).data('has-touch'); 	 
+        $j(this).data('has-touch');   
         MenuManagerState.touchStartPosition = $j(window).scrollTop();
     });
 
