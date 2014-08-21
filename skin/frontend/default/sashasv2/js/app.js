@@ -150,7 +150,7 @@ $j(document).ready(function () {
         }
     };
 
-    var pointerEvent = 'click';
+    var pointerEvent = 'touchend';
     // If device has implemented touch/click agnostic event, use it instead of "click"
     if (window.navigator.pointerEnabled) {
         pointerEvent = 'pointerdown';
