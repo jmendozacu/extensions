@@ -8929,3 +8929,12 @@ div.calendar table td.button {
   color: inherit;
   text-transform: none;
 }
+
+/* ============================================ *
+ * About US
+ * ============================================ */
+.about-us .more-views li, .product-view .more-views li {
+  float: left;
+  margin: 0 0 8px 9px;
+  list-style: none outside none;
+}
