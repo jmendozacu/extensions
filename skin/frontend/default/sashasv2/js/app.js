@@ -150,21 +150,23 @@ $j(document).ready(function () {
         }
     };
 
-    var pointerEvent = 'touchend';
+    var pointerEvent = 'click';
     // If device has implemented touch/click agnostic event, use it instead of "click"
     if (window.navigator.pointerEnabled) {
         pointerEvent = 'pointerdown';
     } else if (window.navigator.msPointerEnabled) {
         pointerEvent = 'MSPointerDown';
     }
-    console.log(pointerEvent);
+    
     nav.find('a.has-children.level0').on(pointerEvent,function (event) {
+    	 
         //scroll occurred, cancel event
         if(MenuManagerState.shouldCancelTouch()) {
             return;
         }
 
         // If mouse is being used on large viewport, use native hover state
+        
         if (window.navigator.msPointerEnabled
             && event.originalEvent.pointerType == 'mouse'
             && Modernizr.mq("screen and (min-width:" + (bp.medium + 1) + "px)")
@@ -177,7 +179,7 @@ $j(document).ready(function () {
         var elem = $j(this).parent();
 
         var alreadyExpanded = elem.hasClass('menu-active');
-
+         
         nav.find('li.level0').removeClass('menu-active');
 
         // Collapse all active sub-menus
@@ -188,7 +190,7 @@ $j(document).ready(function () {
         }
 
         event.preventDefault();
-    }).on('click', function (event) {
+    }).on('click', function (event) { 	 
         var elem = $j(this);
         if (elem.data('has-touch')) {
             elem.data('has-touch', false);
@@ -212,8 +214,8 @@ $j(document).ready(function () {
 
             event.preventDefault();
         }
-    }).on('touchstart', function(event) {
-        $j(this).data('has-touch');
+    }).on('touchstart', function(event) {  
+        $j(this).data('has-touch'); 	 
         MenuManagerState.touchStartPosition = $j(window).scrollTop();
     });
 
