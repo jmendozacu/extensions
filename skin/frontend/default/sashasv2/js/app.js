@@ -157,6 +157,7 @@ $j(document).ready(function () {
     } else if (window.navigator.msPointerEnabled) {
         pointerEvent = 'MSPointerDown';
     }
+    console.log(pointerEvent);
     nav.find('a.has-children.level0').on(pointerEvent,function (event) {
         //scroll occurred, cancel event
         if(MenuManagerState.shouldCancelTouch()) {
@@ -169,6 +170,7 @@ $j(document).ready(function () {
             && Modernizr.mq("screen and (min-width:" + (bp.medium + 1) + "px)")
         ) {
             $j(this).data('has-touch', false);
+             
             return;
         }
         $j(this).data('has-touch', true);
