@@ -10,10 +10,9 @@
 class Sashas_Randnew_Block_New extends Mage_Catalog_Block_Product_New
 {
 	protected function _beforeToHtml()
-	{
-		die();
+	{		 
 		parent::_beforeToHtml();
-		$collection=$this->getCollection();
+		$collection=$this->getProductCollection();
 		$collection->getSelect()->order('rand()');
 		$this->setProductCollection($collection);
 		return $this;

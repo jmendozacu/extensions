@@ -47,3 +47,4 @@ skin/install/
 skin/adminhtml/
 .htaccess.sample
 php.ini.sample
+app/etc/modules/Mage_*

@@ -3,52 +3,52 @@
 /**
  * @author		Sashas
  * @category    Sashas
- * @package     Sashas_Newrand
+ * @package     Sashas_Randnew
  * @copyright   Copyright (c) 2014 Sashas IT Support Inc. (http://www.sashas.org)
  * @license    http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
  */
 -->
 <config>
     <modules>
-        <Sashas_Newrand>
+        <Sashas_Randnew>
             <version>0.1.1</version>
-        </Sashas_Newrand>
+        </Sashas_Randnew>
     </modules>
 	<global>
          <blocks>
-        	<newrand>
-        		<class>Sashas_Newrand_Block</class>        		
-        	</newrand>
+        	<randnew>
+        		<class>Sashas_Randnew_Block</class>        		
+        	</randnew>
         	<catalog>
         		<rewrite> 
-        			<product_new>Sashas_Newrand_Block_New</product_new>
+        			<product_new>Sashas_Randnew_Block_New</product_new>
         		</rewrite>
         	</catalog>
         </blocks> 
         <helpers>
-        	<newrand>
-        		<class>Sashas_Newrand_Helper</class>        		
-        	</newrand>
+        	<randnew>
+        		<class>Sashas_Randnew_Helper</class>        		
+        	</randnew>
         </helpers>      
 		<resources>
-            <newrand_setup>
+            <randnew_setup>
                 <setup>
-                    <module>Sashas_Newrand</module>                 
+                    <module>Sashas_Randnew</module>                 
                 </setup>
                 <connection>
                     <use>core_setup</use>
                 </connection>
-            </newrand_setup>
-            <newrand_write>
+            </randnew_setup>
+            <randnew_write>
                 <connection>
                     <use>core_write</use>
                 </connection>
-            </newrand_write>
-            <newrand_read>
+            </randnew_write>
+            <randnew_read>
                 <connection> 
                     <use>core_read</use>
                 </connection>
-            </newrand_read>
+            </randnew_read>
 		</resources>                         
 	</global>	  	   
 </config>
