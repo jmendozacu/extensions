@@ -18,6 +18,11 @@
  		<reference name="right">
  			 <remove name="catalog.compare.sidebar"/>
  		</reference> 	
+ 		<reference name="footer">
+			<block type="cms/block" name="footer_social_links" after="footer_links2">
+			                    <action method="setBlockId"><block_id>footer_support_links</block_id></action>
+			 </block> 		
+ 		</reference>
  	</default>
  	
  	<catalog_category_default>
