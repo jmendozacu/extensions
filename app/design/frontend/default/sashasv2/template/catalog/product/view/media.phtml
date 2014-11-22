@@ -11,7 +11,7 @@
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
 ?>
-<div class="product-image product-image-zoom">
+<div itemscope itemtype="http://schema.org/Product" itemref="_description2 _brand3"  class="product-image product-image-zoom">
     <div class="product-image-gallery">
         <img id="image-main"
              class="gallery-image visible"
@@ -28,7 +28,7 @@
                                   ->constrainOnly(true)
                                   ->resize(1200);
         ?>
-            <img id="image-<?php echo $i; ?>"
+            <img itemprop="image"  id="image-<?php echo $i; ?>"
                  class="gallery-image"
                  src="<?php echo $_imageUrl; ?>"
                  data-zoom-image="<?php echo  $_imageUrl; ?>" />
@@ -51,7 +51,7 @@
         ?>
         <li>
             <a class="thumb-link" href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-image-index="<?php echo $i; ?>"  data-image="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->keepFrame(false)->constrainOnly(true); ?>" data-zoom-image="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->keepFrame(false)->constrainOnly(true); ?>">
-                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>"
+                <img   src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>"
                      width="75" height="75" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
             </a>
         </li>
