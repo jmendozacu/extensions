@@ -8505,3 +8505,14 @@ div.calendar table td.button {
   width: 100%;
   height: 100%;
 }
+
+/* Top Launguage selector */
+.page-header-container .store-language-container {
+  display: inline-block;
+  float: none;
+  width: auto;
+}
+
+.page-header-container .store-language-container select {
+  padding: 3px;
+}
