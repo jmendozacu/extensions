@@ -147,7 +147,13 @@
                     <dd class="tab-container">
                         <div class="tab-content"><?php echo $html ?></div>
                     </dd>
-                <?php endforeach;?>
+                <?php endforeach;?> 
+                <?php if ($_product->getVideo()): ?>
+                 <dt class="tab"><span><?php echo $this->__("Demo Video"); ?></span></dt>
+                    <dd class="tab-container">
+                        <div class="tab-content"><div class="video-container"><?php echo $_product->getVideo(); ?></div></div>
+                    </dd>       
+               <?php endif; ?>               
             </dl>
         <?php endif; ?>
     </div>
