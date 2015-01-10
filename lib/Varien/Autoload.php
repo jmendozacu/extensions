@@ -90,8 +90,13 @@ class Varien_Autoload
             $classFile = str_replace(' ', DIRECTORY_SEPARATOR, ucwords(str_replace('_', ' ', $class)));
         }
         $classFile.= '.php';
+	/*if ($classFile=='Translation/Entry.php' || $classFile=='Translations.php' || 
+	$classFile=='NOOP/Translations.php' || $classFile=='POMO/Reader.php' || $classFile=='POMO/FileReader.php' ||
+	$classFile='POMO/StringReader.php' )
+		return true; */
+
 //echo $class;  var_dump(debug_backtrace());  die();
-        //echo $classFile;die();
+//        echo $classFile;die();
         return include $classFile;
     }
 

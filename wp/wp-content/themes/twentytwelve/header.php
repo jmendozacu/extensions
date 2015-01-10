@@ -29,8 +29,18 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
+<?php 
+$layout = Mage::app('default')->setCurrentStore( Mage::app()->getStore()->getId() )
+->getLayout();
+$layout->getUpdate()->addHandle('default')
+->load();
+$layout->generateXml()->generateBlocks();
+$head=$layout->getBlock('head');
+echo $head->toHtml();
+ 
+?>
 </head>
-
+ 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
@@ -40,9 +50,12 @@
 		</hgroup>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></button>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+ <?php 
+ $topmenu=$layout->getBlock('top.menu');
+ echo $topmenu->toHtml();
+ 
+ ?>		
+			 
 		</nav><!-- #site-navigation -->
 
 		<?php if ( get_header_image() ) : ?>
