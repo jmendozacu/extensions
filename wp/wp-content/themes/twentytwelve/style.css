@@ -1475,7 +1475,7 @@ img#wpstats {
 	.site {
 		margin: 0 auto;
 		max-width: 960px;
-		max-width: 68.571428571rem;
+		max-width: 90.571428571rem;
 		overflow: hidden;
 	}
 	.site-content {
@@ -1646,7 +1646,7 @@ img#wpstats {
 		padding: 0 40px;
 		padding: 0 2.857142857rem;
 		margin-top: 48px;
-		margin-top: 3.428571429rem;
+		margin-top:0rem;
 		margin-bottom: 48px;
 		margin-bottom: 3.428571429rem;
 		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
@@ -1768,3 +1768,5 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
+#page.site ul.messages {padding-top:20px;}
+.single-post .site-content,  .page .site-content{ width:100%;}
