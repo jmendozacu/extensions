@@ -8,7 +8,9 @@
  */
 
 get_header(); ?>
-
+<?php if ( function_exists('yoast_breadcrumb') ) {
+yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+} ?>
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
