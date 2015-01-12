@@ -498,3 +498,11 @@ function twentytwelve_customize_preview_js() {
 	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20141120', true );
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
+
+add_filter( 'comment_form_defaults', 'remove_comment_form_allowed_tags' );
+function remove_comment_form_allowed_tags( $defaults ) {
+
+	$defaults['comment_notes_after'] = '';
+	return $defaults;
+
+}
