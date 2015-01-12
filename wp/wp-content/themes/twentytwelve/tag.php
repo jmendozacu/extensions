@@ -16,15 +16,7 @@ get_header(); ?>
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
 
-		<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'twentytwelve' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
-
-			<?php if ( tag_description() ) : // Show an optional tag description ?>
-				<div class="archive-meta"><?php echo tag_description(); ?></div>
-			<?php endif; ?>
-			</header><!-- .archive-header -->
-
+		<?php if ( have_posts() ) : ?> 
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
