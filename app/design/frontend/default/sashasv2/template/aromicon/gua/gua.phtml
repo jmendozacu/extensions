@@ -61,16 +61,75 @@
         <?php endforeach;?>
         ga('ecommerce:send');
         <?php endif;?>
+ 
+        <?php /*Sashas*/ ?>
+		<?php 
+		
+		if(Mage::getSingleton('customer/session')->isLoggedIn()){
+		    // Get group Id
+		    $groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+		    //Get customer Group name
+		    $group = Mage::getModel('customer/group')->load($groupId);
+		    $groupname=$group->getCode();
+		}
+		else
+		$groupname= "NOT_LOGGED_IN";
+		
+		?>
+		 
+		ga('set', 'Customer Type', '<?php echo $groupname; ?>');
 
-        <!--404 Tracking-->
-        
+		<?php 
+		if(Mage::registry('current_category')):
+		    $mcategory = Mage::registry('current_category')->getURLPath();
+		    $category = str_replace (".html","",$mcategory);				
+		?>
+		
+			ga('send', 'event',  'Category', 'PageView', '<?php echo $category; ?>');
+		<?php endif;?>
+
+		<?php 
+			if(Mage::registry('current_product')):
+			    $pName = Mage::registry('current_product')->getName();				   		
+		?>				
+				ga('send', 'event',  'Product', 'PageView', '<?php echo $pName; ?>');
+		<?php endif;?>		
+		
+		<?php 
+			if( Mage::app()->getRequest()->getControllerName()=='result')
+			{
+			    $nores = Mage::helper('catalogsearch')->getEngine()->getResultCollection()->addSearchFilter(Mage::helper('catalogsearch')->getQuery()->getQueryText())->getSize();
+			 			
+				if (isset($nores)){
+				    if ($nores==0) {
+				        $SQuText = Mage::helper('catalogSearch')->getQueryText();  
+				       echo "ga('send', 'event',  'Search', 'No Result', '".$SQuText."');";
+				        
+				    }
+				}	
+			}	
+		?>
+ 
+		
         <?php
-        $action = Mage::app()->getRequest()->getActionName();
-        if($action == 'noRoute'){?>
-        _gaq.push(['_trackEvent', 'Error', '404', 'page: ' + document.location.pathname + document.location.search + ' ref: ' + document.referrer,,true]);
+	        $action = Mage::app()->getRequest()->getActionName();
+	        if($action == 'noRoute') {?>
+	        ga('send', 'event',  'Error', '404', 'page: ' + document.location.pathname + document.location.search + ' ref: ' + document.referrer);        
         <?php }?>
-       
-        <!--End 404 Tracking-->        
+
+
+        jQuery( document ).ready(function() {
+			jQuery('.toggle-tabs li').each(function(){
+					jQuery(this).click(function(){
+						ga('send', 'event',  'Product Tab', 'Click', jQuery(this).children('span').html()+' - <?php echo $pName; ?>'); 
+					});
+					 
+				});
+        });
+		       
+        
+        <?php /*Sashas*/ ?>
+        
     </script>
     <?php echo $this->getChildHtml(); ?>
     <!--Aromicon Google Universal Analytics Section end -->
