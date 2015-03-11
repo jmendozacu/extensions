@@ -33,6 +33,7 @@
 $layout = Mage::app('default')->setCurrentStore( Mage::app()->getStore()->getId() )->getLayout();
 $layout->getUpdate()->addHandle('default')->load();
 $layout->generateXml()->generateBlocks();
+ 
 $head=$layout->getBlock('head');
 echo $head->toHtml();
  
@@ -44,6 +45,8 @@ echo $head->toHtml();
  <?php 
  $topmenu=$layout->getBlock('header');
  $topmenu->unsetChild('store_language');
+ $new_block=$layout->createBlock('page/switch')->setTemplate('wordpress/page/switch/languages.phtml');
+ $topmenu->setChild('store_language',$new_block);
  $topmenu->unsetChild('topSearch');
  echo $topmenu->toHtml();
  
