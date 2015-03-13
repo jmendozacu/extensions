@@ -45,7 +45,7 @@ echo $head->toHtml();
  <?php 
  $topmenu=$layout->getBlock('header');
  $topmenu->unsetChild('store_language');
- $new_block=$layout->createBlock('page/switch')->setTemplate('wordpress/page/switch/languages.phtml');
+ $new_block=$layout->createBlock('wordpress/page_switch');
  $topmenu->setChild('store_language',$new_block);
  $topmenu->unsetChild('topSearch');
  echo $topmenu->toHtml();
