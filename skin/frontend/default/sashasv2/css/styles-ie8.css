@@ -5110,18 +5110,12 @@ p.product-name a:hover {
 /* ============================================ *
  * Checkout - Layout
  * ============================================ */
-.cart-table {
-  float: left;
-  width: 60%;
-}
-
 .cart .button {
   white-space: normal;
 }
 
 .cart-forms,
-.cart-totals-wrapper,
-.crosssell {
+.cart-totals-wrapper {
   float: right;
   clear: right;
   width: 40%;
@@ -5168,8 +5162,8 @@ p.product-name a:hover {
   width: 50%;
 }
 .display-both-prices .crosssell {
-  clear: right;
-  float: right;
+  clear: left;
+  float: left;
 }
 
 .display-single-price:after {
@@ -5601,6 +5595,25 @@ p.product-name a:hover {
 }
 
 /* Change the layout to 2 columns at a breakpoint that is higher than a 3 columns layout would normally break */
+/* ============================================ *
+ * Checkout - Custom
+ * ============================================ */
+.cart-left-part {
+  float: left;
+  clear: left;
+  width: 60%;
+}
+
+.cart .crosssell {
+  float: left;
+  clear: left;
+  width: 100%;
+}
+.cart .cart-table {
+  float: left;
+  width: 100%;
+}
+
 /* ============================================ *
  * Checkout - One Page
  * ============================================ */
